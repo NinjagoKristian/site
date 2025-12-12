@@ -87,11 +87,12 @@ export default function HomePage() {
     <div className="relative flex flex-1 overflow-hidden">
       <GitInfoButton />
       <Spotlight />
-      <div className="container mx-auto flex flex-1 flex-col gap-8 px-12 py-8 lg:flex-row items-center lg:justify-between lg:py-0">
-        <div className="max-lg:max-w-lg space-y-6 max-lg:py-32 max-w-xl max-lg:text-center">
+      <div className="container mx-auto flex flex-1 flex-col items-center gap-8 px-12 py-8 lg:flex-row lg:justify-between lg:py-0">
+        <div className="max-w-xl space-y-6 max-lg:max-w-lg max-lg:py-32 max-lg:text-center">
           <h1 className="text-4xl font-semibold text-balance">
-            {messages.home.title}
+            {messages.home.title.split("{flipwords}")[0]}
             <FlipWords words={messages.home.flipwords} />
+            {messages.home.title.split("{flipwords}")[1]}
           </h1>
           <h2 className="text-muted-foreground text-lg text-balance">
             {messages.home.description}
