@@ -132,10 +132,10 @@ export default function HomePage() {
                               {item.author}
                             </h2>
                           </div>
-                          <Button size="icon-lg">
-                            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          <Button size="icon-lg" asChild>
+                            <Link href={item.link} target="_blank" rel="noopener noreferrer">
                               <ExternalLinkIcon />
-                            </a>
+                            </Link>
                           </Button>
                         </div>
                         <Image
