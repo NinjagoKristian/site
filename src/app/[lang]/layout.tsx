@@ -2,22 +2,25 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import { defineI18nUI } from "fumadocs-ui/i18n";
 import { i18n } from "@/lib/i18n";
 import Script from "next/script";
+import englishTranslations from "@/../messages/en.json";
+
+const translations = Object.fromEntries(
+  i18n.languages.map((lang) => {
+    const messages = require(`@/../messages/${lang}.json`);
+    return [
+      lang,
+      {
+        displayName: messages.displayName ?? englishTranslations.displayName,
+        ...(messages.nav?.search && {
+          search: messages.nav.search ?? englishTranslations.nav.search,
+        }),
+      },
+    ];
+  }),
+);
 
 const { provider } = defineI18nUI(i18n, {
-  translations: {
-    en: { displayName: "English" },
-    "es-ES": { displayName: "Español" },
-    "af-ZA": { displayName: "Afrikaans" },
-    "de-DE": { displayName: "Deutsch" },
-    "id-ID": { displayName: "Indonesia" },
-    "fr-FR": { displayName: "Français" },
-    "hi-IN": { displayName: "हिन्दी", search: "खोजें" },
-    "pt-BR": { displayName: "Português (Brasil)" },
-    "ru-RU": { displayName: "Русский" },
-    "tr-TR": { displayName: "Türkçe" },
-    "ar-SA": { displayName: "العربية" },
-    "lv-LV": { displayName: "Latviski" },
-  },
+  translations,
 });
 
 export default async function RootLayout({

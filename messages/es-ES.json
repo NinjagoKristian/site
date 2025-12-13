@@ -1,15 +1,13 @@
 {
+  "displayName": "Español",
+
   "nav": {
     "title": "Hytale Modding",
     "documentation": "Documentación"
   },
   "home": {
     "title": "Hytale Modding",
-    "flipwords": [
-    "Guides",
-    "Documentation",
-    "Resources"
-    ],
+    "flipwords": ["Guides", "Documentation", "Resources"],
     "description": "The number one community resource for modding Hytale, featuring comprehensive guides, detailed documentation, and essential tools to kickstart your modding journey.",
     "documentation": "Documentation",
     "discord": "Discord",

@@ -1,7 +1,10 @@
 {
+  "displayName": "English",
+
   "nav": {
     "title": "Hytale Modding",
-    "documentation": "Documentation"
+    "documentation": "Documentation",
+    "search": "Search"
   },
 
   "home": {
