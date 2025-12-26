@@ -9,6 +9,7 @@ import Link from "next/link";
 
 import { useState, useEffect, ViewTransition, startTransition } from "react";
 import { getSponsors } from "../actions";
+import { useMessages } from "@/lib/hooks/useMessages";
 
 const featuredSponsors: Sponsor[] = [
   {
@@ -28,6 +29,8 @@ const staticSponsors: Sponsor[] = [
   },
 ];
 export function SponsorsList() {
+  const messages = useMessages();
+
   const [sponsors, setSponsors] = useState<Sponsor[]>(staticSponsors);
   const [state, setState] = useState<"loading" | "error" | "loaded">("loading");
 
@@ -52,7 +55,7 @@ export function SponsorsList() {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold">Our Sponsors</h3>
+      <h3 className="text-xl font-semibold">{messages.sponsors.ourSponsors}</h3>
       {/* <div className="space-y-4 pt-8">
         <div className="space-y-3">
           {featuredSponsors.map((sponsor) => (
@@ -79,10 +82,10 @@ export function SponsorsList() {
       <ViewTransition update="blur-scale-transition">
         <div className="flex flex-wrap justify-center gap-2">
           {state === "loading" && (
-            <p className="text-muted-foreground">Loading sponsors...</p>
+            <p className="text-muted-foreground">{messages.misc.loading}</p>
           )}
           {state === "error" && (
-            <p className="text-destructive">Failed to load sponsors.</p>
+            <p className="text-destructive">{messages.misc.failedToLoad}</p>
           )}
           {state === "loaded" &&
             sponsors.map((sponsor) => {

@@ -4,7 +4,7 @@ import { Spotlight } from "@/components/ui/spotlight-new";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { GitInfoButton } from "@/components/git-info-button";
-import { Suspense, ViewTransition } from "react";
+import { ViewTransition } from "react";
 import { SponsorsList } from "./sponsors-list";
 import { useMessages } from "@/lib/hooks/useMessages";
 
@@ -20,15 +20,10 @@ export default function SponsorsPage() {
           <ViewTransition name="hero" share="blur-scale-transition">
             <div className="flex max-w-4xl flex-col items-center justify-center space-y-4">
               <h1 className="text-4xl font-semibold text-balance">
-                Support Us
+                {messages.sponsors.title}
               </h1>
               <h2 className="text-muted-foreground text-lg text-balance">
-                HytaleModding is an open-source community project, and part of
-                managing the community involves paying for services, servers and
-                infrastructure, like hosting this website. If you would like to
-                support the project, consider becoming a sponsor! We use
-                OpenCollective so you can see how funds are being used to
-                support the community.
+                {messages.sponsors.description}
               </h2>
               <Button asChild variant={"primary"}>
                 <Link

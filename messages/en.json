@@ -18,8 +18,15 @@
     "memberCount": "{count} Members"
   },
 
+  "sponsors": {
+    "title": "Support Us",
+    "description": "HytaleModding is an open-source community project, and part of managing the community involves paying for services, servers and infrastructure, like hosting this website. If you would like to support the project, consider becoming a sponsor! We use OpenCollective so you can see how funds are being used to support the community.",
+    "ourSponsors": "Our Sponsors"
+  },
+
   "misc": {
     "loading": "Loading...",
+    "failedToLoad": "Failed to load.",
     "gitInfoUnavailable": "Git info not available",
     "credit": "Written by",
     "supportUs": "Support Us"
