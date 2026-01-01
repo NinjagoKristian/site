@@ -1,4 +1,4 @@
-import { getPageImage, source } from "@/lib/source";
+import { source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,

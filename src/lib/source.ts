@@ -11,12 +11,12 @@ export const source = loader({
   i18n,
 });
 
-export function getPageImage(page: InferPageType<typeof source>) {
-  return {
-    segments: page.slugs,
-    url: `/og/docs/${page.locale}/${page.slugs.join("/")}`,
-  };
-}
+// export function getPageImage(page: InferPageType<typeof source>) {
+//   return {
+//     segments: page.slugs,
+//     url: `/og/docs/${page.locale}/${page.slugs.join("/")}`,
+//   };
+// }
 
 export async function getLLMText(page: InferPageType<typeof source>) {
   const processed = await page.data.getText("processed");
